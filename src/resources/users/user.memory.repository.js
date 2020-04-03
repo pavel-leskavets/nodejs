@@ -1,6 +1,30 @@
-const getAll = async () => {
-  // TODO: mock implementation. should be replaced during task development
-  return [];
-};
+const USER_DATA = [
+  {
+    id: '447e73b2-e93d-440b-b587-0480149cba8e',
+    name: 'Pavel',
+    login: 'Jake',
+    password: 'Epping'
+  },
+  {
+    id: '9bc061c9-c548-40a2-a7c0-0e32f8ea5ae9',
+    name: 'Max',
+    login: 'MadMax',
+    password: 'sdfsdfsdf'
+  },
+  {
+    id: 'dd738cf9-b578-4d34-989e-227dc9483b6e',
+    name: 'John',
+    login: 'Wilkes ',
+    password: 'Booth'
+  },
+  {
+    id: 'ba9dd268-f6e4-4c87-91aa-4850038ffc3b',
+    name: 'Lee',
+    login: 'Harvey',
+    password: 'Oswald'
+  }
+];
 
-module.exports = { getAll };
+const getAll = async () => USER_DATA;
+
+module.exports = { getAll, USER_DATA };
