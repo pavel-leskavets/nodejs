@@ -1,11 +1,5 @@
 const USER_DATA = [
   {
-    id: '447e73b2-e93d-440b-b587-0480149cba8e',
-    name: 'Pavel',
-    login: 'Jake',
-    password: 'Epping'
-  },
-  {
     id: '9bc061c9-c548-40a2-a7c0-0e32f8ea5ae9',
     name: 'Max',
     login: 'MadMax',

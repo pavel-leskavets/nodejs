@@ -44,7 +44,6 @@ router.route('/:id').put(async (req, res) => {
 
 router.route('/:id').delete(async (req, res) => {
   const deletedBoard = await boardService.deleteBoard(req.params.id);
-  console.log(deletedBoard);
   if (deletedBoard === null) {
     await res
       .status(404)

@@ -1,6 +1,7 @@
 const boardsRepo = require('./board.memory.repository');
 const idHelper = require('../../helpers/currentIdHelper');
 const idValidator = require('../../helpers/columnsIdValidator');
+const taskService = require('../tasks/task.service');
 
 const getAll = () => boardsRepo.getAll();
 
@@ -43,9 +44,11 @@ const updateColumns = (columns, newColumns) => {
 
 const deleteBoard = async boardId => {
   const currentBoardIndex = idHelper(boardId, boardsRepo.BOARD_DATA);
-  return currentBoardIndex !== null
-    ? boardsRepo.BOARD_DATA.splice(currentBoardIndex, 1)
-    : currentBoardIndex;
+  if (currentBoardIndex !== null) {
+    await taskService.deleteTaskIfBoardDeleted(boardId);
+    return boardsRepo.BOARD_DATA.splice(currentBoardIndex, 1);
+  }
+  return null;
 };
 
 module.exports = { getAll, getById, addBoard, updateBoard, deleteBoard };
